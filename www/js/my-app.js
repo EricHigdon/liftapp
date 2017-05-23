@@ -3,6 +3,7 @@ var myApp,
     mediaPlayer,
     playTimer,
     auth_token = localStorage.getItem('auth_token'),
+    username = localStorage.getItem('username'),
     params,
     elapsedTime = 0,
     playingItem;
@@ -20,16 +21,17 @@ function guid() {
     s4() + '-' + s4() + s4() + s4();
 }
 $(document).ready(function() {
-    var username = localStorage.getItem('username');
-    while(!device_id) {
-        try {
-            var device_id = device.uuid;
-        }
-        catch (e) {
-            console.log(e);
-        } 
+    document.addEventListener("deviceready", startSetup, false);
+});
+
+function startSetup() {
+    try {
+        var device_id = device.uuid;
     }
-    console.log(username, device_id);
+    catch (e) {
+        console.log(e);
+        var device_id = false;
+    }
     if (!username) {
         if (device_id) {
             console.log('updating username to device id');
@@ -41,9 +43,8 @@ $(document).ready(function() {
         }
     }
     if (!auth_token) {
-        
         password = guid();
-        console.log(username, device.uuid);
+        console.log(username, device_id);
         $.ajax({
             url: url + 'account/',
             method: 'PUT',
@@ -55,7 +56,7 @@ $(document).ready(function() {
             success: function(response) {
                 console.log('response', response.username, 'local', username);
                 auth_token = response.auth_token;
-                localStorage.setItem('auth_token', response.auth_token);
+                localStorage.setItem('auth_token', auth_token);
                 localStorage.setItem('username', response.username);
                 localStorage.setItem('user_id', response.pk);
             },
@@ -71,12 +72,13 @@ $(document).ready(function() {
     });
     
     if(device_id && username != device_id) {
+        username = device_id;
         $.ajax({
             url: url+'account/',
             method: 'POST',
             dataType: 'json',
             data: {
-                'username': device_id,
+                'username': username,
             },
             success: function(response) {
                 localStorage.setItem('username', response.username);
@@ -92,8 +94,8 @@ $(document).ready(function() {
     // increase allocated space on Chrome to 50MB, default was 10MB
     ImgCache.options.chromeQuota = 50*1024*1024;
     //load pages
-    document.addEventListener("deviceready", checkModified, false);
-});
+    checkModified();
+}
 function checkModified() {
     $.ajax({
         url: url+'modified/1/',
