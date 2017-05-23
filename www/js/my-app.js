@@ -1,5 +1,5 @@
 var myApp,
-    url = 'http://192.168.200.243:8000/',
+    url = 'http://accordapp.com/',
     mediaPlayer,
     playTimer,
     auth_token = localStorage.getItem('auth_token'),
@@ -98,7 +98,7 @@ function startSetup() {
 }
 function checkModified() {
     $.ajax({
-        url: url+'modified/1/',
+        url: url+'modified/3/',
         crossDomain: true,
         dataType: 'json',
         success: function(data) {
@@ -116,7 +116,7 @@ function checkModified() {
 
 function loadPages(modified) {
     $.ajax({
-        url: url+'api/1/',
+        url: url+'api/3/',
         crossDomain: true,
         dataType: 'json',
         success: function(data) {
@@ -213,7 +213,7 @@ function renderInsta(data) {
 
 function setup() {
     try {
-        window.plugins.headerColor.tint("#0f1229");
+        window.plugins.headerColor.tint("#232323");
     }
     catch(e) {}
     // Initialize your app
