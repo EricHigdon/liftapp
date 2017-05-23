@@ -333,6 +333,12 @@ a.login-skip {
     height: 0px;
     background: none;
 }
+.devotions li .item-inner {
+    display: block;
+}
+.devotions li h3 {
+    color: #333;
+}
 a.open-notes {
     position: fixed;
     right: 0px;
