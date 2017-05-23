@@ -340,6 +340,9 @@ a.login-skip {
     color: #333;
     padding-top: 15px;
 }
+.devotions li .item-content {
+    min-height: 0px;
+}
 a.open-notes {
     position: fixed;
     right: 0px;
