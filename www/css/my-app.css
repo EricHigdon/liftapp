@@ -198,8 +198,8 @@ form p {
 .tabbar [href="#connect"]:before {
     content: "\f1e6";
 }
-.tabbar [href="#news"]:before {
-    content: "\f1ea";
+.tabbar [href="#devotions"]:before {
+    content: "\f02d";
 }
 .tabbar [href="#schedule"]:before {
     content: "\f073";
