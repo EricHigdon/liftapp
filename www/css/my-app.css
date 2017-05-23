@@ -338,6 +338,7 @@ a.login-skip {
 }
 .devotions li h3 {
     color: #333;
+    padding-top: 15px;
 }
 a.open-notes {
     position: fixed;
