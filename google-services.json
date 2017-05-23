@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "663980513133",
+    "firebase_url": "https://fwbc-2e6c3.firebaseio.com",
+    "project_id": "fwbc-2e6c3",
+    "storage_bucket": "fwbc-2e6c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663980513133:android:fe9e1306158da8aa",
+        "android_client_info": {
+          "package_name": "com.erichigdon.accord"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663980513133-qao0mb7vn030iekd6uq2eukiqtd38ftd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXV6InWs8WrIKNq11VI1gvJVKIjSsfeLo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
