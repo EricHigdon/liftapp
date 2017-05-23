@@ -192,8 +192,8 @@ form p {
 .tabbar [href="#home"]:before {
     content: "\f015";
 }
-.tabbar [href="#im-new"]:before {
-    content: "\f007";
+.tabbar [href="#locations"]:before {
+    content: "\f041";
 }
 .tabbar [href="#connect"]:before {
     content: "\f1e6";
@@ -319,6 +319,19 @@ a.login-skip {
     text-align: center;
     display: block;
     color: #fff;
+}
+.locations li {
+    height: 175px;
+    padding: 20px 0px;
+}
+.locations li .item-inner {
+    display: block;
+}
+.locations li .item-inner p {
+    color: #fff;
+    text-align: center;
+    font-size: 18pt;
+    margin: 5px 0px;
 }
 a.open-notes {
     position: fixed;
