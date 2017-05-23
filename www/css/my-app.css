@@ -201,12 +201,8 @@ form p {
 .tabbar [href="#news"]:before {
     content: "\f1ea";
 }
-.tabbar [href="#my-church"]:before {
-    content: "";
-    background-image: url(../img/church.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+.tabbar [href="#schedule"]:before {
+    content: "\f073";
 }
 .tabbar a.active[href="#my-church"]:before {
     background-image: url(../img/church-active.png);
@@ -332,6 +328,10 @@ a.login-skip {
     text-align: center;
     font-size: 18pt;
     margin: 5px 0px;
+}
+.locations .list-block .item-inner:after {
+    height: 0px;
+    background: none;
 }
 a.open-notes {
     position: fixed;
