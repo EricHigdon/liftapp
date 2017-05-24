@@ -1,6 +1,6 @@
 var myApp,
     url = 'http://accordapp.com/',
-    church_id = 1,
+    church_id = 3,
     mediaPlayer,
     playTimer,
     auth_token = localStorage.getItem('auth_token'),
