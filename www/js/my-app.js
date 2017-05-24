@@ -1,12 +1,14 @@
 var myApp,
     url = 'http://accordapp.com/',
+    church_id = 1,
     mediaPlayer,
     playTimer,
     auth_token = localStorage.getItem('auth_token'),
     username = localStorage.getItem('username'),
     params,
     elapsedTime = 0,
-    playingItem;
+    playingItem,
+    mainView;
 
 window.addEventListener("load", function () {
     window.loaded = true;
@@ -98,7 +100,7 @@ function startSetup() {
 }
 function checkModified() {
     $.ajax({
-        url: url+'modified/3/',
+        url: url+'modified/'+ church_id +'/',
         crossDomain: true,
         dataType: 'json',
         success: function(data) {
@@ -116,7 +118,7 @@ function checkModified() {
 
 function loadPages(modified) {
     $.ajax({
-        url: url+'api/3/',
+        url: url+'api/'+ church_id +'/',
         crossDomain: true,
         dataType: 'json',
         success: function(data) {
@@ -227,7 +229,7 @@ function setup() {
        xhr.setRequestHeader('Authorization', 'Token '+auth_token);
     });
     // Add view
-    var mainView = myApp.addView('.view-main', {
+    mainView = myApp.addView('.view-main', {
         domCache: true //enable inline pages
     });
     if (!localStorage.getItem('login_finished')) {
@@ -592,21 +594,34 @@ function setupNotifications() {
     });
     
     push.on('notification', function(data) {
-        if(data.additionalData['content-available'] == 1) {
-            localStorage.removeItem('cacheModified');
-            if(data.additionalData.foreground) {
-                push.finish(function() {
-                    console.log("processing of push data is finished");
-                });
-                myApp.confirm(data.message, 'Update Available', function () {
-                    navigator.splashscreen.show();
-                location.reload();
-                });
-            }
-            else {
-            navigator.splashscreen.show();
-                location.reload();
-            }
+        if(data.additionalData['content-available'] == 1 && data.additionalData.action) {
+		console.log(data);
+		if (data.additionalData.action == 'update') {
+		    localStorage.removeItem('cacheModified');
+		    if(data.additionalData.foreground) {
+			push.finish(function() {
+			    console.log("processing of push data is finished");
+			});
+			myApp.confirm(data.message, 'Update Available', function () {
+				navigator.splashscreen.show();
+				location.reload();
+			});
+		    }
+		    else {
+		    navigator.splashscreen.show();
+			location.reload();
+		    }
+		}
+		else if(data.additionalData.action == 'change_page') {
+			if(data.additionalData.foreground) {
+				myApp.confirm(data.message, '', function () {
+					mainView.router.loadPage(data.additionalData.url);
+				});
+			}
+			else {
+				mainView.router.loadPage(data.additionalData.url);
+			}
+		}
         }
         else {
             myApp.alert(data.message, '');
