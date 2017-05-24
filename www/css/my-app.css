@@ -198,7 +198,7 @@ form p {
 .tabbar [href="#connect"]:before {
     content: "\f1e6";
 }
-.tabbar [href="#devotions"]:before {
+.tabbar [href="#resources"]:before {
     content: "\f02d";
 }
 .tabbar [href="#schedule"]:before {
@@ -333,13 +333,13 @@ a.login-skip {
     height: 0px;
     background: none;
 }
-.devotions li .item-inner {
+.resources li .item-inner {
     display: block;
 }
-.devotions li h3 {
+.resources li h3 {
     color: #333;
 }
-.devotions li .item-content {
+.resources li .item-content {
     min-height: 0px;
 }
 a.open-notes {
