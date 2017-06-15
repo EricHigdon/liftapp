@@ -1,5 +1,5 @@
 var myApp,
-    url = 'http://192.168.200.243:8000/',
+    url = 'https://accordapp.com/',
     church_id = 3,
     mediaPlayer,
     playTimer,
@@ -9,7 +9,7 @@ var myApp,
     elapsedTime = 0,
     playingItem,
     mainView,
-    device_id;
+    device_id = false;
 
 window.addEventListener("load", function () {
     window.loaded = true;
