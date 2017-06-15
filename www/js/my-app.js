@@ -68,7 +68,8 @@ function startSetup() {
                     method: 'GET',
                     dataType: 'json',
                     data: {
-                        'username': username
+                        'username': username,
+                        'format': 'json'
                     },
                     success: function(response) {
                         console.log('response', response.username, 'local', username);
