@@ -36,17 +36,14 @@ function startSetup() {
     }
     if (!username) {
         if (device_id) {
-            console.log('updating username to device id');
             username = device_id;
         }
         else {
-            console.log('creating username guid');
             username = guid();
         }
     }
     if (!auth_token) {
         password = guid();
-        console.log(username, device_id);
         $.ajax({
             url: url + 'account/',
             method: 'PUT',
@@ -56,10 +53,10 @@ function startSetup() {
                 'password': password
             },
             success: function(response) {
-                auth_token = response[0].auth_token;
+                auth_token = response.auth_token;
                 localStorage.setItem('auth_token', auth_token);
-                localStorage.setItem('username', response[0].username);
-                localStorage.setItem('user_id', response[0].pk);
+                localStorage.setItem('username', response.username);
+                localStorage.setItem('user_id', response.pk);
                 checkModified();
             },
             error: function(response) {
@@ -69,15 +66,14 @@ function startSetup() {
                     method: 'GET',
                     dataType: 'json',
                     data: {
-                        'username': username,
-                        'format': 'json'
+                        'username': username
                     },
                     success: function(response) {
-                        console.log('response', response.username, 'local', username);
-                        auth_token = response.auth_token;
+                        console.log('response', response[0].username, 'local', username);
+                        auth_token = response[0].auth_token;
                         localStorage.setItem('auth_token', auth_token);
-                        localStorage.setItem('username', response.username);
-                        localStorage.setItem('user_id', response.pk);
+                        localStorage.setItem('username', response[0].username);
+                        localStorage.setItem('user_id', response[0].pk);
                         checkModified();
                     },
                     error: function(response) {
