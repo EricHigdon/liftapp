@@ -56,14 +56,31 @@ function startSetup() {
                 'password': password
             },
             success: function(response) {
-                console.log('response', response.username, 'local', username);
-                auth_token = response.auth_token;
+                auth_token = response[0].auth_token;
                 localStorage.setItem('auth_token', auth_token);
-                localStorage.setItem('username', response.username);
-                localStorage.setItem('user_id', response.pk);
+                localStorage.setItem('username', response[0].username);
+                localStorage.setItem('user_id', response[0].pk);
             },
             error: function(response) {
-                console.log(response);
+                console.log('Username exists', response);
+                $.ajax({
+                    url: url + 'account/',
+                    method: 'GET',
+                    dataType: 'json',
+                    data: {
+                        'username': username
+                    },
+                    success: function(response) {
+                        console.log('response', response.username, 'local', username);
+                        auth_token = response.auth_token;
+                        localStorage.setItem('auth_token', auth_token);
+                        localStorage.setItem('username', response.username);
+                        localStorage.setItem('user_id', response.pk);
+                    },
+                    error: function(response) {
+                        console.log(response);
+                    }
+                });
             }
         });
     }
