@@ -1,5 +1,5 @@
 var myApp,
-    url = 'http://192.168.200.243/',
+    url = 'http://192.168.200.243:8000/',
     church_id = 3,
     mediaPlayer,
     playTimer,
