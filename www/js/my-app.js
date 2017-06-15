@@ -60,6 +60,7 @@ function startSetup() {
                 localStorage.setItem('auth_token', auth_token);
                 localStorage.setItem('username', response[0].username);
                 localStorage.setItem('user_id', response[0].pk);
+                checkModified();
             },
             error: function(response) {
                 console.log('Username exists', response);
@@ -77,6 +78,7 @@ function startSetup() {
                         localStorage.setItem('auth_token', auth_token);
                         localStorage.setItem('username', response.username);
                         localStorage.setItem('user_id', response.pk);
+                        checkModified();
                     },
                     error: function(response) {
                         console.log(response);
@@ -85,11 +87,6 @@ function startSetup() {
             }
         });
     }
-    $.ajaxSetup({
-        beforeSend: function(xhr, settings) {
-            xhr.setRequestHeader('Authorization', 'Token '+auth_token);
-        }
-    });
     
     if(device_id && username != device_id) {
         username = device_id;
@@ -114,9 +111,13 @@ function startSetup() {
     // increase allocated space on Chrome to 50MB, default was 10MB
     ImgCache.options.chromeQuota = 50*1024*1024;
     //load pages
-    checkModified();
 }
 function checkModified() {
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            xhr.setRequestHeader('Authorization', 'Token '+auth_token);
+        }
+    });
     $.ajax({
         url: url+'modified/'+ church_id +'/',
         crossDomain: true,
