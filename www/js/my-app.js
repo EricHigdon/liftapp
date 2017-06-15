@@ -8,7 +8,8 @@ var myApp,
     params,
     elapsedTime = 0,
     playingItem,
-    mainView;
+    mainView,
+    device_id;
 
 window.addEventListener("load", function () {
     window.loaded = true;
@@ -28,11 +29,11 @@ $(document).ready(function() {
 
 function startSetup() {
     try {
-        var device_id = device.uuid;
+        device_id = device.uuid;
     }
     catch (e) {
         console.log(e);
-        var device_id = false;
+        device_id = false;
     }
     if (!username) {
         if (device_id) {
@@ -84,6 +85,21 @@ function startSetup() {
         });
     }
     
+    
+    
+    // write log to console
+    ImgCache.options.debug = true;
+    // increase allocated space on Chrome to 50MB, default was 10MB
+    ImgCache.options.chromeQuota = 50*1024*1024;
+    //load pages
+}
+function checkModified() {
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            xhr.setRequestHeader('Authorization', 'Token '+auth_token);
+        }
+    });
+    console.log(device_id, username);
     if(device_id && username != device_id) {
         username = device_id;
         $.ajax({
@@ -101,19 +117,6 @@ function startSetup() {
             },
         });
     }
-    
-    // write log to console
-    ImgCache.options.debug = true;
-    // increase allocated space on Chrome to 50MB, default was 10MB
-    ImgCache.options.chromeQuota = 50*1024*1024;
-    //load pages
-}
-function checkModified() {
-    $.ajaxSetup({
-        beforeSend: function(xhr, settings) {
-            xhr.setRequestHeader('Authorization', 'Token '+auth_token);
-        }
-    });
     $.ajax({
         url: url+'modified/'+ church_id +'/',
         crossDomain: true,
