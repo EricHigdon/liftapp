@@ -1,5 +1,5 @@
 var myApp,
-    url = 'http://accordapp.com/',
+    url = 'http://192.168.200.243/',
     church_id = 3,
     mediaPlayer,
     playTimer,
