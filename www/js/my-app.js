@@ -84,6 +84,9 @@ function startSetup() {
             }
         });
     }
+	else	{
+		checkModified();
+	}
     
     
     
