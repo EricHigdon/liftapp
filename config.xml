@@ -92,6 +92,7 @@
   </platform>
 
   <access origin="*"/>
+  <allow-navigation href="*" />
   <plugin name="cordova-plugin-whitelist" version="1"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
