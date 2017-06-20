@@ -112,7 +112,6 @@
   <config-file platform="ios" parent="UIBackgroundModes" mode="replace">
     <array>
         <string>remote-notification</string>
-        <string>audio</string>
     </array>
   </config-file>
   
