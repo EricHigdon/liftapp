@@ -3,6 +3,7 @@
   <description>Lift For Life Camps</description>
   <author href="http://accordapp.com" email="eric.s.higdon@gmail.com">Eric Higdon</author>
   <content src="index.html"/>
+  <preference name="target-device" value="handset" />
   <preference name="permissions" value="none"/>
   <preference name="orientation" value="portrait"/>
   <preference name="target-device" value="universal"/>
