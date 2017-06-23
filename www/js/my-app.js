@@ -90,13 +90,13 @@ function startSetup() {
     
     
     
+}
+function checkModified() {
     // write log to console
     ImgCache.options.debug = true;
     // increase allocated space on Chrome to 50MB, default was 10MB
     ImgCache.options.chromeQuota = 50*1024*1024;
     //load pages
-}
-function checkModified() {
     $.ajaxSetup({
         beforeSend: function(xhr, settings) {
             xhr.setRequestHeader('Authorization', 'Token '+auth_token);
