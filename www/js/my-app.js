@@ -263,7 +263,8 @@ function setup() {
     });
     $('#login-save').click(function() {
         var first_name = $('#first_name').val(),
-            last_name = $('#last_name').val();
+            last_name = $('#last_name').val(),
+            email = $('#email').val();
         if (first_name && last_name) {
             $.ajax({
                 url: url+'account/',
@@ -272,6 +273,7 @@ function setup() {
                 data: {
                     'first_name': first_name,
                     'last_name': last_name,
+					'email': email,
                 },
                 success: function(response) {
                     localStorage.setItem('login_finished', true);
