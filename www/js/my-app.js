@@ -9,7 +9,9 @@ var myApp,
     elapsedTime = 0,
     playingItem,
     mainView,
-    device_id = false;
+    device_id = false,
+    pageData,
+    gaCode;
 
 window.addEventListener("load", function () {
     window.loaded = true;
@@ -149,7 +151,11 @@ function loadPages(modified) {
 }
 
 function renderPages(data) {
-    var pageData = data;
+    pageData = data;
+    try {
+        gaCode = data.ga;
+    }
+    catch(e) {}
     $.each(pageData.pages, function(index){
         $('div.pages').append(this.content);
         var link = $('<a href="#'+slugify(this.title)+'" class="no-animation">'+this.title+'</a>')
@@ -285,7 +291,7 @@ function setup() {
             });
         }
     });
-    ga('create', 'UA-85602316-1', {
+    ga('create', gaCode, {
         'storage': 'none',
         'clientId':device.uuid
     });
