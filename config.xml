@@ -88,6 +88,8 @@
         <splash qualifier="port-xhdpi" src="www/res/screens/android/screen-xhdpi-portrait.png" />
     </platform>
     <access origin="*" />
+    <allow-navigation href="https://www.youtube.com/*" />
+	<allow-navigation href="cdvfile://*" />
     <plugin name="cordova-plugin-whitelist" version="1" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
