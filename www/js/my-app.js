@@ -30,6 +30,11 @@ $(document).ready(function() {
 });
 
 function startSetup() {
+    // write log to console
+    ImgCache.options.debug = true;
+    // increase allocated space on Chrome to 50MB, default was 10MB
+    ImgCache.options.chromeQuota = 50*1024*1024;
+    
     try {
         device_id = device.uuid;
     }
@@ -94,10 +99,6 @@ function startSetup() {
     
 }
 function checkModified() {
-    // write log to console
-    ImgCache.options.debug = true;
-    // increase allocated space on Chrome to 50MB, default was 10MB
-    ImgCache.options.chromeQuota = 50*1024*1024;
     //load pages
     $.ajaxSetup({
         beforeSend: function(xhr, settings) {

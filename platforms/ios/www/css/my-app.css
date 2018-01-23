@@ -1,0 +1,446 @@
+html, body, .pages, .page {
+    background: #232323;
+}
+body {
+    font-family: 'ralewayregular', sans-serif;
+    font-size: 12pt;
+    padding-top: 0px !important;
+}
+.ios .page {
+    padding-top: 20px;
+}
+.button {
+    border-color: #333;
+    color: #333;
+    margin-top: 15px;
+    padding: 5px;
+    height: auto;
+    font-size: 15pt;
+}
+.accordion-item-content {
+    font-size: 12pt;
+}
+img {
+    max-width: 100%;
+}
+h3 {
+    color: #fff;
+    margin: 20px;
+    font-size: 16pt;
+    font-weight: normal;
+    font-family: 'ralewayextrabold', sans-serif;
+}
+.content-block-title {
+    font-family: 'ralewaybold', sans-serif;
+}
+.accordion-item h3:after {
+    content: "\f105";
+    font-family: FontAwesome;
+    float: right;
+    transition: all, .3s, ease;
+}
+.accordion-item-expanded h3:after {
+    transform: rotate(90deg);
+}
+.navbar, .subnavbar, .toolbar {
+    background: rgba(247, 247, 248, 0.9);
+    -webkit-backdrop-filter: blur(10px);
+}
+.page[data-page='home'] {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+.page-content.love-works .content-block {
+    background: rgba(0, 0, 0, .7);
+    margin: 0px;
+}
+.content-block.instafeed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow:hidden;
+    padding:0px;
+}
+.content-block.foreground-block {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: contain;
+    background-position:center center;
+    height: 100%;
+    margin:0px;
+    background-repeat: no-repeat
+}
+.button {
+    font-family: 'ralewaybold', sans-serif;
+}
+.button.white-button {
+    padding: 10px;
+    height: auto;
+    color: #fff;
+    border: 2px solid #fff;
+    font-weight: bold;
+    font-size: 14pt;
+}
+.backdrop img {
+    width: 100%;
+    margin-top: -25px;
+}
+.backdrop i.fa.fa-times {
+    color: #fff;
+    font-size: 18pt;
+    float: right;
+    position: relative;
+    z-index: 9;
+    margin-right: 7px;
+}
+.backdrop p {
+    color: #fff;
+    margin-top: 0px;
+}
+.page-content.welcome {
+    background: #0f1229;
+}
+.date {
+    position: absolute;
+    font-size: 10pt;
+    left: 5px;
+    margin-top: 5px;
+}
+address {
+    position: absolute;
+    right: 5px;
+    line-height: 8pt;
+    font-size: 8pt;
+}
+address p {
+    margin: 5px 0px;
+    text-align: right;
+}
+.welcome .content-block-top img {
+    width: 200px;
+    display: block;
+    margin: auto;
+}
+.welcome .content-block-title {
+    color: #fff;
+    font-weight: bolder;
+    white-space: initial;
+    line-height: 14pt;
+    margin-bottom: 0px;
+}
+.welcome .content-block {
+    margin-top: 0px;
+}
+.welcome .content-block-inner {
+    background: none;
+    color: #fff;
+}
+.welcome .content-block-inner:after {
+    display: none;
+}
+.welcome .content-block-inner:before {
+    display: none;
+}
+i.icon.icon-form-addr {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/i-form-addr-ios.svg);
+}
+.submit-section {
+    margin: 30px 10px;
+    position: relative;
+    bottom: 15px;
+}
+.welcome .list-block textarea.resizable {
+    height: 80px;
+}
+form p {
+    background: #fff;
+    text-align: center;
+    padding: 10px;
+    color: #333;
+}
+.submit-section input {
+    margin-bottom: 10px;
+}
+.content-block.content-block-top {
+    margin-top: 0px;
+    background: #fff;
+}
+.content-block.content-block-top:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.tabbar [href] {
+    font-size: 10pt;
+    text-align: center;
+}
+.tabbar [href]:before {
+    font-family: fontawesome;
+    font-size: 17pt;
+    display: block;
+    text-align: center;
+    height: 25pt;
+    margin-bottom: -7px;
+}
+.tabbar [href="#home"]:before {
+    content: "\f015";
+}
+.tabbar [href="#locations"]:before {
+    content: "\f041";
+}
+.tabbar [href="#connect"]:before {
+    content: "\f1e6";
+}
+.tabbar [href="#resources"]:before {
+    content: "\f02d";
+}
+.tabbar [href="#schedule"]:before {
+    content: "\f073";
+}
+.tabbar a.active[href="#my-church"]:before {
+    background-image: url(../img/church-active.png);
+}
+.content-block-inner {
+    overflow: hidden;
+}
+.accordion-item img {
+    width: 100%;
+}
+.accordion-item-content {
+    background: #FFF;
+    margin-top: -5px;
+    border-bottom: 1.5px solid #0f1229;
+    padding: 0px 15px;
+}
+[data-page="Notes"] .list-block {
+    height: 70%;
+}
+[data-page="Notes"] .list-block * {
+    height: 100% !important;
+}
+i.js-edit {
+    cursor: pointer;
+}
+h1.form-header {
+    color: #fff;
+    font-size: 12pt;
+    display: block;
+    text-align: center;
+    margin-bottom: 0px;
+}
+form.list-block {
+    margin-top: 10px;
+}
+a.back {
+    color: #fff;
+}
+.android a.back {
+    display: block;
+    padding-top: 10px;
+}
+a.back i {
+    font-size: 20pt;
+    margin-left: 10px;
+    vertical-align: bottom;
+}
+.scripture-block {
+    margin-top: 0px;
+}
+scripture {
+    color: #fff;
+    font-size:14pt;
+}
+scripture center b {
+    font-family: 'ralewaybold', sans-serif;
+    font-size: 16pt;
+    margin-bottom: 25px;
+    display: block;
+}
+scripture sup {
+    font-size: 9pt;
+    font-family: 'ralewaybold', sans-serif;
+}
+scripture br {
+    line-height: 30pt;
+}
+scripture p {
+    margin-top: 0px;
+    text-align: justify;
+}
+.list-block .item-link.playSermon .item-inner {
+    background: none;
+}
+.list-block .item-link.playSermon:after {
+    content: '\f144';
+    font-family: fontawesome;
+    position: absolute;
+    right: 15px;
+    font-size: 24pt;
+    color: #6d6d72;
+}
+.list-block .item-link.playSermon.playing:after {
+    content: '\f28b';
+}
+span.caption {
+    color: #666;
+    font-size: 10pt;
+}
+.login-screen label {
+    display: block;
+    margin-bottom: 15px;
+    color: #fff;
+}
+.login-screen label input {
+    margin: 6px 5px 10px 5px;
+    vertical-align: middle;
+}
+[data-page="podcasts"] .list-block .item-title {
+    max-width: 95%;
+}
+.login-screen-content {
+    background: #232323;
+    color: #fff;
+}
+.login-screen-content .list-block {
+    background: #fff;
+}
+a.login-skip {
+    text-align: center;
+    display: block;
+    color: #fff;
+}
+.locations li {
+    height: 175px;
+    padding: 20px 0px;
+}
+.locations li .item-inner {
+    display: block;
+}
+.locations li .item-inner p {
+    color: #fff;
+    text-align: center;
+    font-size: 18pt;
+    margin: 5px 0px;
+}
+.locations .list-block .item-inner:after {
+    height: 0px;
+    background: none;
+}
+.resources li .item-inner {
+    display: block;
+}
+.resources li h3 {
+    color: #333;
+}
+.resources li .item-content {
+    min-height: 0px;
+}
+a.open-notes {
+    position: fixed;
+    right: 0px;
+    top: 25px;
+    background: #0f1229;
+    padding: 10px;
+    border: 2px solid #fff;
+    border-right: none;
+    color: #fff;
+    font-size: 16pt;
+}
+#editor-container {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    color: #333;
+}
+.ql-toolbar {
+    border: 1px solid #333;
+    background: #fff;
+}
+.panel .content-block {
+    height: 100%;
+}
+
+/* iPad Styles */
+@media (min-width: 767px) {
+    .love-works .button {
+        right: 75px;
+        left: 75px;
+        bottom: 175px;
+    }
+    .accordion-item img {
+        width: 10%;
+    }
+    .page-content.love-works .instafeed img {
+        width: 33.333%;
+    }
+    .love-works .content-block.foreground-block {
+        bottom: 70px;
+    }
+    .page-content.love-works img {
+        max-width: 70%;
+        margin: auto;
+        display: block;
+    }
+    .tabbar .toolbar-inner {
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+    }
+    .navbar, .toolbar {
+        height: 70px;
+    }
+    .tabbar [href] {
+        font-size: 15pt;
+    }
+    .tabbar [href]:before {
+        font-family: fontawesome;
+        font-size: 25pt;
+        display: block;
+        text-align: center;
+        height: 35pt;
+        margin-bottom: -7px;
+    }
+    .content-block-top img {
+        width: 400px;
+        display: block;
+        margin: auto;
+    }
+    .content-block-inner img {
+        margin-left: 0px;
+        margin-top: 0px;
+        width: 35%;
+        margin-right: 15px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .content-block-inner img + p {
+        display: inline-block;
+        width: 62%;
+        vertical-align: middle;
+    }
+    .content-block-inner img[style] + p {
+        display: block;
+        width: 100%;
+    }
+    .accordion-item {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .accordion-item-content {
+        height: auto !important;
+        margin-top: 0px;
+        border-bottom: none;
+    }
+    .accordion-item-toggle {
+        flex-basis: 40%;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+}
