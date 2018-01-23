@@ -28,11 +28,11 @@
     <preference name="FadeSplashScreen" value="true" />
     <preference name="FadeSplashScreenDuration" value="500" />
     <preference name="ShowSplashScreenSpinner" value="false" />
-    <plugin name="org.apache.cordova.splashscreen" />
-    <plugin name="org.apache.cordova.statusbar" />
-    <plugin name="org.apache.cordova.device" />
-    <plugin name="org.apache.cordova.file" />
-    <plugin name="org.apache.cordova.file-transfer" />
+    <plugin name="cordova-plugin-splashscreen" />
+    <plugin name="cordova-plugin-statusbar" />
+    <plugin name="cordova-plugin-device" />
+    <plugin name="cordova-plugin-file" />
+    <plugin name="cordova-plugin-file-transfer" />
     <plugin name="cordova-plugin-headercolor" />
     <plugin name="cordova-plugin-dialogs" />
     <plugin name="cordova-plugin-media" spec="~2.4.1" />
@@ -89,6 +89,7 @@
     </platform>
     <access origin="*" />
     <allow-navigation href="https://www.youtube.com/*" />
+	<allow-navigation href="cdvfile://*" />
     <plugin name="cordova-plugin-whitelist" version="1" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
