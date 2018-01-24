@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="5" id="com.accordapp.lift" version="1.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget android-versionCode="5" id="com.accordapp.lift" version="1.3.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Engage</name>
     <description>Engage Camps</description>
     <author email="eric.s.higdon@gmail.com" href="http://accordapp.com">Eric Higdon</author>
