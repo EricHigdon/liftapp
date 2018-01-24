@@ -31,8 +31,8 @@
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-statusbar" />
     <plugin name="cordova-plugin-device" />
-    <plugin name="cordova-plugin-file" />
-    <plugin name="cordova-plugin-file-transfer" />
+    <plugin name="cordova-plugin-file" spec="~4.3.3" />
+    <plugin name="cordova-plugin-file-transfer" spec="~1.6.3" />
     <plugin name="cordova-plugin-headercolor" />
     <plugin name="cordova-plugin-dialogs" />
     <plugin name="cordova-plugin-media" spec="~2.4.1" />
