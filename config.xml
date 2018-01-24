@@ -11,8 +11,8 @@
     <preference name="webviewbounce" value="false" />
     <preference name="prerendered-icon" value="false" />
     <preference name="stay-in-webview" value="false" />
-    <preference name="StatusBarOverlaysWebView" value="true" />
-    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#232323" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="detect-data-types" value="true" />
     <preference name="exit-on-suspend" value="false" />
