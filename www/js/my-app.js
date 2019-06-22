@@ -102,6 +102,7 @@ function checkModified() {
     //load pages
     $.ajaxSetup({
         beforeSend: function(xhr, settings) {
+	    console.log('setting Auth header to ' + auth_token);
             xhr.setRequestHeader('Authorization', 'Token '+auth_token);
         }
     });
@@ -254,6 +255,7 @@ function setup() {
     var $$ = Dom7;
     $$(document).on('ajaxStart', function(e){
        var xhr = e.detail.xhr;
+       console.log('setting Auth header to ' + auth_token);
        xhr.setRequestHeader('Authorization', 'Token '+auth_token);
     });
     // Add view
