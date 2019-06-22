@@ -251,6 +251,11 @@ function setup() {
     myApp = new Framework7({
         animatePages: true
     });
+    myApp.request.setup({
+	headers:{
+            Authorization: 'Token ' + auth_token
+        }
+    });
     // Export selectors engine
     var $$ = Dom7;
     $$(document).on('ajaxStart', function(e){
